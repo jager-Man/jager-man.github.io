@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta property="og:type" content="website">
 <meta property="og:title" content="Blog">
-<meta property="og:url" content="http://jager.top/archives/2020/index.html">
+<meta property="og:url" content="http://jager.top/tags/centos/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="jager">
@@ -354,43 +354,54 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2020/04/01/hello-world/" >
+        <a class="abstract-title" href = "/2019/07/27/centos/" >
             
-                <span>重装系统后，迁移HEXO遇到的一些问题</span>
+                <span>centos的配置包括一些基本服务的安装</span>
         </a>
         <div class="abstract-content">
-            悲报！ 电脑炸了，忘了备份所有文章全部全部GG
-虽然我也没写多少，只有从头再来
+            主要是对cenos7中出现的一些基础配置
+首先是对本地的网络进行配置
 
-在重装的时候遇到一大堆问题，让人头皮发麻，学到了几个并不重要的姿势
+对yum源的配置把yum源理解为安装工具就行了
+配置1.备份系统默认的yum源cd到该目录
+cd/etc/yum.repos.d/
+2.创建文件夹备份
+mkdir bak
+mv *.repo bak
 
-npm 源的问题，国外源太慢了
-设置淘宝镜像
+怎么配置
 
-npm config set registry=https://registry.npm.taobao.org
+挂载光盘(临时)
 
-不使用淘宝镜像恢复原来的镜像
-
-npm config set registry https://registry.npmjs.org
+2. 配置源文件
 
 
+name:随意命名
+baseurl:file(本地源,已经挂载到cdrom目录)
+http,https(网络源)
+gpgcheck:密钥检测
 
 
-接下来是存储位置的问题
-设置npm下载位置和缓存位置，双引号内存放你要指定的路径。
 
-npm config set prefix “D:\...
+apache1.安装apache  yum install httpd httpd-devel
+2.启动apache服...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/04/01</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/27</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "hexo">hexo</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "centos">centos</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "apache">apache</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "mysql">mysql</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "教程">教程</a>
     
 </div>
             

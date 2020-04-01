@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta property="og:type" content="website">
 <meta property="og:title" content="Blog">
-<meta property="og:url" content="http://jager.top/archives/2020/index.html">
+<meta property="og:url" content="http://jager.top/tags/%E6%94%BB%E9%98%B2%E5%AF%B9%E6%8A%97/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="jager">
@@ -354,43 +354,44 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2020/04/01/hello-world/" >
+        <a class="abstract-title" href = "/2019/07/26/%E6%94%BB%E9%98%B2demo/" >
             
-                <span>重装系统后，迁移HEXO遇到的一些问题</span>
+                <span>对某版本win7靶机的渗透测试</span>
         </a>
         <div class="abstract-content">
-            悲报！ 电脑炸了，忘了备份所有文章全部全部GG
-虽然我也没写多少，只有从头再来
-
-在重装的时候遇到一大堆问题，让人头皮发麻，学到了几个并不重要的姿势
-
-npm 源的问题，国外源太慢了
-设置淘宝镜像
-
-npm config set registry=https://registry.npm.taobao.org
-
-不使用淘宝镜像恢复原来的镜像
-
-npm config set registry https://registry.npmjs.org
+            对某版本靶机进行小小的测试0x00首先使用工具去扫描，这里使用kali自带的zenmap和nmap去跑
+0x01
+在zenmap出跑出的端口列表中可以看得到，有3390端口没有被关闭。远程连接端口！
+直接链接ip看看能不能用
+可以连接，于是想到用九头蛇去爆破
+但是时间开销太大了，放弃，换个思路
 
 
+0x02
+nmap脚本跑出cve
+1nmap --script&#x3D;vuln ip
 
 
-接下来是存储位置的问题
-设置npm下载位置和缓存位置，双引号内存放你要指定的路径。
+查找到可以尝试利用，使用该模块
 
-npm config set prefix “D:\...
+展开设置，设置rhosts为目标主机，再run运行，得到VULENRABLE的结果，说明该漏洞可以利用 
+
+再次展开设置，设置rhost为目标主机开始攻击 
+
+选择载...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/04/01</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/26</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "hexo">hexo</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "攻防对抗">攻防对抗</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "测试">测试</a>
     
 </div>
             
