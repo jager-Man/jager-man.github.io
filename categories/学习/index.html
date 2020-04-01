@@ -421,9 +421,69 @@ CSRF漏洞简介 CSRF（Cross-Site Request Forgery，跨站点伪造请求）是
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "教程">教程</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags = "web安全">web安全</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "CSRF">CSRF</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2019/07/27/centos/" >
+            
+                <span>centos的配置包括一些基本服务的安装</span>
+        </a>
+        <div class="abstract-content">
+            主要是对cenos7中出现的一些基础配置
+首先是对本地的网络进行配置
+
+对yum源的配置把yum源理解为安装工具就行了
+配置1.备份系统默认的yum源cd到该目录
+cd/etc/yum.repos.d/
+2.创建文件夹备份
+mkdir bak
+mv *.repo bak
+
+怎么配置
+
+挂载光盘(临时)
+
+2. 配置源文件
+
+
+name:随意命名
+baseurl:file(本地源,已经挂载到cdrom目录)
+http,https(网络源)
+gpgcheck:密钥检测
+
+
+
+apache1.安装apache  yum install httpd httpd-devel
+2.启动apache服...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/27</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "centos">centos</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "apache">apache</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "mysql">mysql</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "教程">教程</a>
     
 </div>
             
@@ -548,8 +608,6 @@ CSRF漏洞简介 CSRF（Cross-Site Request Forgery，跨站点伪造请求）是
     
     
     
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 4
@@ -604,12 +662,6 @@ CSRF漏洞简介 CSRF（Cross-Site Request Forgery，跨站点伪造请求）是
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
-    
-        <span class="sidebar-tag-name" data-tags="攻防对抗"><span class="iconfont-archer">&#xe606;</span>攻防对抗</span>
-    
-        <span class="sidebar-tag-name" data-tags="测试"><span class="iconfont-archer">&#xe606;</span>测试</span>
-    
         <span class="sidebar-tag-name" data-tags="centos"><span class="iconfont-archer">&#xe606;</span>centos</span>
     
         <span class="sidebar-tag-name" data-tags="apache"><span class="iconfont-archer">&#xe606;</span>apache</span>
@@ -619,6 +671,14 @@ CSRF漏洞简介 CSRF（Cross-Site Request Forgery，跨站点伪造请求）是
         <span class="sidebar-tag-name" data-tags="教程"><span class="iconfont-archer">&#xe606;</span>教程</span>
     
         <span class="sidebar-tag-name" data-tags="web安全"><span class="iconfont-archer">&#xe606;</span>web安全</span>
+    
+        <span class="sidebar-tag-name" data-tags="CSRF"><span class="iconfont-archer">&#xe606;</span>CSRF</span>
+    
+        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
+    
+        <span class="sidebar-tag-name" data-tags="攻防对抗"><span class="iconfont-archer">&#xe606;</span>攻防对抗</span>
+    
+        <span class="sidebar-tag-name" data-tags="测试"><span class="iconfont-archer">&#xe606;</span>测试</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -653,11 +713,9 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="实践"><span class="iconfont-archer">&#xe60a;</span>实践</span>
-    
         <span class="sidebar-category-name" data-categories="学习"><span class="iconfont-archer">&#xe60a;</span>学习</span>
     
-        <span class="sidebar-category-name" data-categories="工作"><span class="iconfont-archer">&#xe60a;</span>工作</span>
+        <span class="sidebar-category-name" data-categories="实践"><span class="iconfont-archer">&#xe60a;</span>实践</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
