@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta property="og:type" content="website">
 <meta property="og:title" content="Blog">
-<meta property="og:url" content="http://jager.top/tags/%E6%B5%8B%E8%AF%95/index.html">
+<meta property="og:url" content="http://jager.top/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="jager">
@@ -354,44 +354,32 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2019/07/26/%E6%94%BB%E9%98%B2demo/" >
+        <a class="abstract-title" href = "/2020/04/01/%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/" >
             
-                <span>对某版本win7靶机的渗透测试</span>
+                <span>CVE-2019-0708</span>
         </a>
         <div class="abstract-content">
-            对某版本靶机进行小小的测试0x00首先使用工具去扫描，这里使用kali自带的zenmap和nmap去跑
-0x01
-在zenmap出跑出的端口列表中可以看得到，有3390端口没有被关闭。远程连接端口！
-直接链接ip看看能不能用
-可以连接，于是想到用九头蛇去爆破
-但是时间开销太大了，放弃，换个思路
+            kali下载cve-2019-0708模块对目标机进行漏洞利用获取shell漏洞概述
+2019年5月14日微软官方发布安全补丁，修复了Windows远程桌面服务的远程代码执行漏洞，该漏洞影响了某些旧版本的Windows系统。此漏洞是预身份验证且无需用户交互，这就意味着这个漏洞可以通过网络蠕虫的方式被利用。利用此漏洞的任何恶意软件都可能从被感染的计算机传播到其他易受攻击的计算机，其方式与2017年WannaCry恶意软件的传播方式类似。
+
+下载与利用该模块
+这里是开发好的POC，但不是kali上的
 
 
-0x02
-nmap脚本跑出cve
-1nmap --script&#x3D;vuln ip
-
-
-查找到可以尝试利用，使用该模块
-
-展开设置，设置rhosts为目标主机，再run运行，得到VULENRABLE的结果，说明该漏洞可以利用 
-
-再次展开设置，设置rhost为目标主机开始攻击 
-
-选择载...
+12git clone https://github.com/n1xbyte/CVE-2...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/26</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/04/01</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "攻防对抗">攻防对抗</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "漏洞利用">漏洞利用</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "测试">测试</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "metasploit">metasploit</a>
     
 </div>
             
@@ -588,8 +576,6 @@ nmap脚本跑出cve
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
-    
         <span class="sidebar-tag-name" data-tags="centos"><span class="iconfont-archer">&#xe606;</span>centos</span>
     
         <span class="sidebar-tag-name" data-tags="apache"><span class="iconfont-archer">&#xe606;</span>apache</span>
@@ -598,17 +584,17 @@ nmap脚本跑出cve
     
         <span class="sidebar-tag-name" data-tags="教程"><span class="iconfont-archer">&#xe606;</span>教程</span>
     
+        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
+    
         <span class="sidebar-tag-name" data-tags="web安全"><span class="iconfont-archer">&#xe606;</span>web安全</span>
     
         <span class="sidebar-tag-name" data-tags="CSRF"><span class="iconfont-archer">&#xe606;</span>CSRF</span>
     
         <span class="sidebar-tag-name" data-tags="攻防对抗"><span class="iconfont-archer">&#xe606;</span>攻防对抗</span>
     
-        <span class="sidebar-tag-name" data-tags="测试"><span class="iconfont-archer">&#xe606;</span>测试</span>
+        <span class="sidebar-tag-name" data-tags="漏洞利用"><span class="iconfont-archer">&#xe606;</span>漏洞利用</span>
     
         <span class="sidebar-tag-name" data-tags="metasploit"><span class="iconfont-archer">&#xe606;</span>metasploit</span>
-    
-        <span class="sidebar-tag-name" data-tags="漏洞利用"><span class="iconfont-archer">&#xe606;</span>漏洞利用</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -647,7 +633,7 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="实践"><span class="iconfont-archer">&#xe60a;</span>实践</span>
     
-        <span class="sidebar-category-name" data-categories="实践-漏洞复现"><span class="iconfont-archer">&#xe60a;</span>实践-漏洞复现</span>
+        <span class="sidebar-category-name" data-categories="漏洞复现"><span class="iconfont-archer">&#xe60a;</span>漏洞复现</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
