@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta property="og:type" content="website">
 <meta property="og:title" content="Blog">
-<meta property="og:url" content="http://jager.top/tags/php/index.html">
+<meta property="og:url" content="http://jager.top/tags/%E6%80%BB%E7%BB%93%EF%BC%8C%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="jager">
@@ -354,31 +354,35 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2020/04/07/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" >
+        <a class="abstract-title" href = "/2020/09/18/%E4%BB%8Esql%E6%B3%A8%E5%85%A5%E5%88%B0%E8%8E%B7%E5%8F%96shell/" >
             
-                <span>代码审计学习之路(持续更新)</span>
+                <span>《初见内网渗透-web服务器获取shell》</span>
         </a>
         <div class="abstract-content">
-            Day_1in_arry()函数弱类型漏洞in_arry()函数功能
-in_array ：(PHP 4, PHP 5, PHP 7)
-功能 ：检查数组中是否存在某个值
-定义 ： bool in_array ( mixed $needle , array $haystack [, bool $strict = FALSE ] )
-在 $haystack 中搜索 $needle ，如果第三个参数 $strict 的值为 TRUE ，则 in_array() 函数会进行强检查，检查 $needle 的类型是否和 $haystack 中的相同。如果找到 $haystack，则返回 TRUE，否则...
+            拿下DMZ服务器权限
+
+怎么拿？通常来说，dmz主机都是开放的网站服务器。
+
+1.sql注入获得webshellmysql端口:3306
+通过select into outfile实现
+1’ union select 1,’‘ INTO OUTFILE ‘/var/www/tmp/nb.php’#
+
+select ……. into outfile 命令将数据库数据导出到 一个文本文件中。这里很明显了。我们直接将一句话木马写到 数据库中，再导出到服务器下的网页文件中即可。
+需要条件:    
+1.知道网站的绝对路径     
+2.可以读写指定的网站目录    
+3.指定的目录在mysql规...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/04/07</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/18</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "红日">红日</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "代码审计">代码审计</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "php">php</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "总结，内网渗透">总结，内网渗透</a>
     
 </div>
             

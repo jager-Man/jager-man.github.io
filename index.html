@@ -367,6 +367,77 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/09/18/%E4%BB%8Esql%E6%B3%A8%E5%85%A5%E5%88%B0%E8%8E%B7%E5%8F%96shell/" >
+            
+                <span>《初见内网渗透-web服务器获取shell》</span>
+        </a>
+        <div class="abstract-content">
+            拿下DMZ服务器权限
+
+怎么拿？通常来说，dmz主机都是开放的网站服务器。
+
+1.sql注入获得webshellmysql端口:3306
+通过select into outfile实现
+1’ union select 1,’‘ INTO OUTFILE ‘/var/www/tmp/nb.php’#
+
+select ……. into outfile 命令将数据库数据导出到 一个文本文件中。这里很明显了。我们直接将一句话木马写到 数据库中，再导出到服务器下的网页文件中即可。
+需要条件:    
+1.知道网站的绝对路径     
+2.可以读写指定的网站目录    
+3.指定的目录在mysql规...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/18</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "总结，内网渗透">总结，内网渗透</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/07/10/%E9%92%88%E5%AF%B9%E6%9F%90%E7%BD%91%E7%AB%99%E7%9A%84%E4%B8%80%E6%AC%A1%E4%BC%97%E6%B5%8B%E7%BB%8F%E9%AA%8C/" >
+            
+                <span>针对某网站的一次众测经验</span>
+        </a>
+        <div class="abstract-content">
+            学校搞实习，拿到某站的众测资格，经过一番测试之后算是有了点小收获首先当然是信息收集啦
+信息收集
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/10</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "渗透测试">渗透测试</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/04/07/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" >
             
                 <span>代码审计学习之路(持续更新)</span>
@@ -842,9 +913,31 @@ nmap脚本跑出cve
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 6
+        Total : 8
         </div>
         <!-- search  -->
         
@@ -861,6 +954,16 @@ nmap脚本跑出cve
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/18</span><a class="archive-post-title" href= "/2020/09/18/%E4%BB%8Esql%E6%B3%A8%E5%85%A5%E5%88%B0%E8%8E%B7%E5%8F%96shell/" >《初见内网渗透-web服务器获取shell》</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/10</span><a class="archive-post-title" href= "/2020/07/10/%E9%92%88%E5%AF%B9%E6%9F%90%E7%BD%91%E7%AB%99%E7%9A%84%E4%B8%80%E6%AC%A1%E4%BC%97%E6%B5%8B%E7%BB%8F%E9%AA%8C/" >针对某网站的一次众测经验</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -932,6 +1035,10 @@ nmap脚本跑出cve
     
         <span class="sidebar-tag-name" data-tags="攻防对抗"><span class="iconfont-archer">&#xe606;</span>攻防对抗</span>
     
+        <span class="sidebar-tag-name" data-tags="总结，内网渗透"><span class="iconfont-archer">&#xe606;</span>总结，内网渗透</span>
+    
+        <span class="sidebar-tag-name" data-tags="渗透测试"><span class="iconfont-archer">&#xe606;</span>渗透测试</span>
+    
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -970,6 +1077,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="漏洞复现"><span class="iconfont-archer">&#xe60a;</span>漏洞复现</span>
     
         <span class="sidebar-category-name" data-categories="实践"><span class="iconfont-archer">&#xe60a;</span>实践</span>
+    
+        <span class="sidebar-category-name" data-categories="实战"><span class="iconfont-archer">&#xe60a;</span>实战</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
