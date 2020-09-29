@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta property="og:type" content="website">
 <meta property="og:title" content="Blog">
-<meta property="og:url" content="http://jager.top/tags/%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/index.html">
+<meta property="og:url" content="http://jager.top/tags/%E5%AD%A6%E4%B9%A0-%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="jager">
@@ -354,82 +354,32 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2020/04/01/%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/" >
+        <a class="abstract-title" href = "/2020/09/29/%E4%BB%8E%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%88%B0getshell/" >
             
-                <span>CVE-2019-0708</span>
+                <span>常见中间件漏洞</span>
         </a>
         <div class="abstract-content">
-            kali下载cve-2019-0708模块对目标机进行漏洞利用获取shell漏洞概述
-2019年5月14日微软官方发布安全补丁，修复了Windows远程桌面服务的远程代码执行漏洞，该漏洞影响了某些旧版本的Windows系统。此漏洞是预身份验证且无需用户交互，这就意味着这个漏洞可以通过网络蠕虫的方式被利用。利用此漏洞的任何恶意软件都可能从被感染的计算机传播到其他易受攻击的计算机，其方式与2017年WannaCry恶意软件的传播方式类似。
-
-下载与利用该模块
-这里是开发好的POC，但不是kali上的
+            web中间件漏洞—NGINX漏洞什么是nginx？
 
 
-12git clone https://github.com/n1xbyte/CVE-2...
+Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，在BSD-like 协议下发行。
+其特点是占有内存少，并发能力强，nginx的并发能力在同类型的网页服务器中表现较好。主要应用在百度，淘宝等高并发请求情形。
+
+
+解析漏洞php配置错误导致的解析漏洞漏洞简介:
+对于任意文件名，在后面加上/任意文件名.php，之后，该文件即可以php格式解析。
+对于低版本的php能够直接解析成功，高版本php因为引入了security.limit_extensions，限制了可执行文件的后缀为.php文件...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/04/01</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/29</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "metasploit">metasploit</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "漏洞利用">漏洞利用</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/07/26/%E6%94%BB%E9%98%B2demo/" >
-            
-                <span>对某版本win7靶机的渗透测试</span>
-        </a>
-        <div class="abstract-content">
-            对某版本靶机进行小小的测试0x00首先使用工具去扫描，这里使用kali自带的zenmap和nmap去跑
-0x01
-在zenmap出跑出的端口列表中可以看得到，有3390端口没有被关闭。远程连接端口！
-直接链接ip看看能不能用
-可以连接，于是想到用九头蛇去爆破
-但是时间开销太大了，放弃，换个思路
-
-
-0x02
-nmap脚本跑出cve
-1nmap --script&#x3D;vuln ip
-
-
-查找到可以尝试利用，使用该模块
-
-展开设置，设置rhosts为目标主机，再run运行，得到VULENRABLE的结果，说明该漏洞可以利用 
-
-再次展开设置，设置rhost为目标主机开始攻击 
-
-选择载...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/26</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "漏洞利用">漏洞利用</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "攻防对抗">攻防对抗</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "学习,总结">学习,总结</a>
     
 </div>
             

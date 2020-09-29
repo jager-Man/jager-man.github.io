@@ -20,47 +20,24 @@
     <meta name="keywords" content="Blog,jager">
     
     <meta name="description" content="">
-    <meta name="description" content="CSRF漏洞https:&#x2F;&#x2F;www.cnblogs.com&#x2F;shikyoh&#x2F;p&#x2F;4959678.html https:&#x2F;&#x2F;www.freebuf.com&#x2F;column&#x2F;155800.html CSRF漏洞简介 CSRF（Cross-Site Request Forgery，跨站点伪造请求）是一种网络攻击方式，该攻击可以在受害者毫不知情的情况下以受害者名义伪造请求发送给受攻击站点，从而在未授权的情况">
+    <meta name="description" content="web中间件漏洞—NGINX漏洞什么是nginx？   Nginx是一款轻量级的Web 服务器&#x2F;反向代理服务器及电子邮件（IMAP&#x2F;POP3）代理服务器，在BSD-like 协议下发行。 其特点是占有内存少，并发能力强，nginx的并发能力在同类型的网页服务器中表现较好。主要应用在百度，淘宝等高并发请求情形。   解析漏洞php配置错误导致的解析漏洞漏洞简介: 对于任意文件名，在后面加上&#x2F;任意文件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="csrf跨站请求伪造">
-<meta property="og:url" content="http://jager.top/2019/07/30/csrf%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0/index.html">
+<meta property="og:title" content="常见中间件漏洞">
+<meta property="og:url" content="http://jager.top/2020/09/29/%E4%BB%8E%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%88%B0getshell/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="CSRF漏洞https:&#x2F;&#x2F;www.cnblogs.com&#x2F;shikyoh&#x2F;p&#x2F;4959678.html https:&#x2F;&#x2F;www.freebuf.com&#x2F;column&#x2F;155800.html CSRF漏洞简介 CSRF（Cross-Site Request Forgery，跨站点伪造请求）是一种网络攻击方式，该攻击可以在受害者毫不知情的情况下以受害者名义伪造请求发送给受攻击站点，从而在未授权的情况">
+<meta property="og:description" content="web中间件漏洞—NGINX漏洞什么是nginx？   Nginx是一款轻量级的Web 服务器&#x2F;反向代理服务器及电子邮件（IMAP&#x2F;POP3）代理服务器，在BSD-like 协议下发行。 其特点是占有内存少，并发能力强，nginx的并发能力在同类型的网页服务器中表现较好。主要应用在百度，淘宝等高并发请求情形。   解析漏洞php配置错误导致的解析漏洞漏洞简介: 对于任意文件名，在后面加上&#x2F;任意文件">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/007bHQE8gy1g59sd4j9g4j30t80gharw.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rj7imbaj309d04h3yg.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rjjuze9j30jb08a0tk.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rjwbolhj30cr092t99.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rkaznc7j30m509xta1.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rl0tz7ij30k50bpwfm.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rlblovyj30h80ak3zr.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rlnu3npj30eh08haa5.jpg">
-<meta property="og:image" content="http://jager.top/2019/07/30/csrf%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0/C:%5CUsers%5Cdell%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1563863977602.png">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rmc4dwcj30lp09b74c.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rmmq1hcj30my0czdiu.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rn0qgarj30e2067t8y.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rnbnvsjj31080bvack.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rnt5t3xj310b0a3jti.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/007bHQE8gy1g59ro5r8guj30jt0b1dgy.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/007bHQE8gy1g59royz8alj30hd08174o.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rp9mkq6j30kr08caaa.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rpmyq2nj30ga07raa8.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rq3c9u8j30od08pgmj.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rqctd4cj30pc0fyadn.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rzieiw4j30uu04lt99.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rzujnl4j30wb0aw0u0.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/007bHQE8gy1g59s05noxxj30yc096ju1.jpg">
-<meta property="article:published_time" content="2019-07-30T10:33:43.000Z">
-<meta property="article:modified_time" content="2020-04-01T06:20:16.721Z">
+<meta property="og:image" content="http://jager.top/2020/09/29/%E4%BB%8E%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%88%B0getshell/1.png">
+<meta property="article:published_time" content="2020-09-29T02:01:44.000Z">
+<meta property="article:modified_time" content="2020-09-29T09:23:10.112Z">
 <meta property="article:author" content="jager">
-<meta property="article:tag" content="web安全">
-<meta property="article:tag" content="CSRF">
+<meta property="article:tag" content="学习,总结">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/007bHQE8gy1g59sd4j9g4j30t80gharw.jpg">
+<meta name="twitter:image" content="http://jager.top/2020/09/29/%E4%BB%8E%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%88%B0getshell/1.png">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     
-    <title>csrf跨站请求伪造 · jager&#39;s Studio</title>
+    <title>常见中间件漏洞 · jager&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -255,7 +232,7 @@
                 <a href="/" >jager&#39;s Studio.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">csrf跨站请求伪造</a>
+                <a href="#" class="post-name">常见中间件漏洞</a>
             </div>
     </div>
     
@@ -285,7 +262,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            csrf跨站请求伪造
+            常见中间件漏洞
             <!-- 404 -->
             
         </h1>
@@ -304,20 +281,18 @@ height:50vh;
                 
                     <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "web安全">web安全</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "CSRF">CSRF</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "学习,总结">学习,总结</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">2.8k</span>阅读时长: <span class="post-count reading-time">9 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">829</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/07/30</span>
+                    <span class="post-intro-time">2020/09/29</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -441,80 +416,56 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="CSRF漏洞"><a href="#CSRF漏洞" class="headerlink" title="CSRF漏洞"></a>CSRF漏洞</h1><p><a href="https://www.cnblogs.com/shikyoh/p/4959678.html" target="_blank" rel="noopener">https://www.cnblogs.com/shikyoh/p/4959678.html</a></p>
-<p><a href="https://www.freebuf.com/column/155800.html" target="_blank" rel="noopener">https://www.freebuf.com/column/155800.html</a></p>
-<h2 id="CSRF漏洞简介"><a href="#CSRF漏洞简介" class="headerlink" title="CSRF漏洞简介"></a>CSRF漏洞简介</h2><p> CSRF（Cross-Site Request Forgery，跨站点伪造请求）是一种网络攻击方式，该攻击可以在受害者毫不知情的情况下以受害者名义伪造请求发送给受攻击站点，从而在未授权的情况下执行在权限保护之下的操作，具有很大的危害性。具体来讲，可以这样理解CSRF攻击：攻击者盗用了你的身份，以你的名义发送恶意请求，对服务器来说这个请求是完全合法的，但是却完成了攻击者所期望的一个操作，比如以你的名义发送邮件、发消息，盗取你的账号，添加系统管理员，甚至于购买商品、虚拟货币转账等。</p>
-<p>CSRF攻击方式并不为大家所熟知，实际上很多网站都存在CSRF的安全漏洞。早在2000年，CSRF这种攻击方式已经由国外的安全人员提出，但在国内，直到2006年才开始被关注。2008年，国内外多个大型社区和交互网站先后爆出CSRF漏洞，如：百度HI、NYTimes.com（纽约时报）、Metafilter（一个大型的BLOG网站）和YouTube等。但直到现在，互联网上的许多站点仍对此毫无防备，以至于安全业界称CSRF为“沉睡的巨人”，其威胁程度由此“美誉”便可见一斑。</p>
-<h2 id="CSRF攻击原理及实例"><a href="#CSRF攻击原理及实例" class="headerlink" title="CSRF攻击原理及实例"></a>CSRF攻击原理及实例</h2><p><img src="http://ww1.sinaimg.cn/large/007bHQE8gy1g59sd4j9g4j30t80gharw.jpg" alt></p>
-<p> CSRF攻击原理比较简单，如图1所示。其中Web A为存在CSRF漏洞的网站，Web B为攻击者构建的恶意网站，User C为Web A网站的合法用户。 </p>
-<p>1 用户C打开浏览器，访问受信任网站A，输入用户名和密码请求登录网站A；</p>
-<p>2 在用户信息通过验证后，网站A产生Cookie信息并返回给浏览器，此时用户登录网站A成功，可以正常发送请求到网站A；</p>
-<p>3 用户未退出网站A之前，在同一浏览器中，打开一个TAB页访问网站B；</p>
-<p>4 网站B接收到用户请求后，返回一些攻击性代码，并发出一个请求要求访问第三方站点A；<br> <strong>(**</strong>网站B对网站A发出一个请求的同时，浏览器也会把网站A产生Cookie信息带上)–相当于浏览器访问网站A—这是user信息被盗用的关键**</p>
-<p>5 浏览器在接收到这些攻击性代码后，根据网站B的请求，在用户不知情的情况下携带Cookie信息，向网站A发出请求。网站A并不知道该请求其实是由B发起的，所以会根据用户C的Cookie信息以C的权限处理该请求，导致来自网站B的恶意代码被执行。</p>
-<h2 id="CSRF攻击分类"><a href="#CSRF攻击分类" class="headerlink" title="CSRF攻击分类"></a>CSRF攻击分类</h2><p>CSRF漏洞一般分为站外和站内两种类型。</p>
-<p>CSRF站外类型的漏洞本质上就是传统意义上的外部提交数据问题。通常程序员会考虑给一些留言或者评论的表单加上水印以防止SPAM问题（这里，SPAM可以简单的理解为垃圾留言、垃圾评论，或者是带有站外链接的恶意回复），但是有时为了提高用户的体验性，可能没有对一些操作做任何限制，所以攻击者可以事先预测并设置请求的参数，在站外的Web页面里编写脚本伪造文件请求，或者和自动提交的表单一起使用来实现GET、POST请求，当用户在会话状态下点击链接访问站外Web页面，客户端就被强迫发起请求。</p>
-<p>CSRF站内类型的漏洞在一定程度上是由于程序员滥用类变量造成的。在一些敏感的操作中（如修改密码、添加用户等），本来要求用户从表单提交发起请求传递参数给程序，但是由于使用了REQUEST类变量造成的。在一些敏感的操作中（如修改密码、添加用户等），本来要求用户从表单提交发起POST请求传递参数给程序，但是由于使用了_REQUEST等变量，程序除支持接收POST请求传递的参数外也支持接收GET请求传递的参数，这样就会为攻击者使用CSRF攻击创造条件。一般攻击者只要把预测的请求参数放在站内一个贴子或者留言的图片链接里，受害者浏览了这样的页面就会被强迫发起这些请求。</p>
-<h2 id="CSRF攻击实例"><a href="#CSRF攻击实例" class="headerlink" title="CSRF攻击实例"></a>CSRF攻击实例</h2><p>下面以Axous 1.1.1 CSRF Add Admin Vulnerability（漏洞CVE编号：CVE-2012-2629）为例，介绍CSRF攻击具体实施过程。</p>
-<p>Axous是一款网上商店应用软件。Axous 1.1.1以及更低版本在实现上存在一个CSRF漏洞，远程攻击者可以通过构造特制的网页，诱使该软件管理员访问，成功利用此漏洞的攻击者可以添加系统管理员。利用此漏洞主要包含以下三个过程：</p>
-<ol>
-<li>攻击者构造恶意网页。在实施攻击前，攻击者需要构造一个与正常添加管理员用户基本一样的网页，在该恶意网页中对必要的参数项进行赋值，并将该网页的action指向正常添加管理员用户时访问的URL，核心代码如图2所示；</li>
-<li>攻击者利用社会工程学诱使Axous系统管理员访问其构造的恶意网页；</li>
-<li>执行恶意代码。当系统管理员访问恶意网页时，恶意代码在管理员不知情的情况下以系统管理员的合法权限被执行，攻击者伪造的管理员账户添加成功。 </li>
-</ol>
-<h2 id="CSRF漏洞防御"><a href="#CSRF漏洞防御" class="headerlink" title="CSRF漏洞防御"></a>CSRF漏洞防御</h2><p> CSRF漏洞防御主要可以从三个层面进行，即服务端的防御、用户端的防御和安全设备的防御。</p>
-<p>服务端的防御<br> 目前业界服务器端防御CSRF攻击主要有三种策略：验证HTTP Referer字段，在请求地址中添加token并验证，在HTTP头中自定义属性并验证。下面分别对这三种策略进行简要介绍。</p>
-<p>1 验证HTTP Referer字段</p>
-<p>根据HTTP协议，在HTTP头中有一个字段叫Referer，它记录了该HTTP请求的来源地址。在通常情况下，访问一个安全受限页面的请求必须来自于同一个网站。比如某银行的转账是通过用户访问<a href="http://bank.test/test?page=10&amp;userID=101&amp;money=10000页面完成，用户必须先登录bank" target="_blank" rel="noopener">http://bank.test/test?page=10&amp;userID=101&amp;money=10000页面完成，用户必须先登录bank</a>. test，然后通过点击页面上的按钮来触发转账事件。当用户提交请求时，该转账请求的Referer值就会是转账按钮所在页面的URL（本例中，通常是以bank. test域名开头的地址）。而如果攻击者要对银行网站实施CSRF攻击，他只能在自己的网站构造请求，当用户通过攻击者的网站发送请求到银行时，该请求的Referer是指向攻击者的网站。因此，要防御CSRF攻击，银行网站只需要对于每一个转账请求验证其Referer值，如果是以bank. test开头的域名，则说明该请求是来自银行网站自己的请求，是合法的。如果Referer是其他网站的话，就有可能是CSRF攻击，则拒绝该请求。<br> java获取HTTP Referer代码：</p>
-<p>​        // 获取请求是从哪里来的  </p>
-<p>​        String referer = request.getHeader(“referer”);  </p>
-<p>​        // 如果是直接输入的地址，或者不是从本网站访问的重定向到本网站的首页  </p>
-<p>​        if (referer == null || !referer.startsWith(“<a href="http://localhost&quot;" target="_blank" rel="noopener">http://localhost&quot;</a>)) {  </p>
-<p>​            response.sendRedirect(“/day06/index.jsp”);  </p>
-<p>​            // 然后return，不要输出后面的内容了  </p>
-<p>​            return;  </p>
-<p>​        }  </p>
-<p>2 在请求地址中添加token并验证</p>
-<p>CSRF攻击之所以能够成功，是因为攻击者可以伪造用户的请求，该请求中所有的用户验证信息都存在于Cookie中，因此攻击者可以在不知道这些验证信息的情况下直接利用用户自己的Cookie来通过安全验证。由此可知，抵御CSRF攻击的关键在于：在请求中放入攻击者所不能伪造的信息，并且该信息不存在于Cookie之中。鉴于此，系统开发者可以在HTTP请求中以参数的形式加入一个随机产生的token，并在服务器端建立一个拦截器来验证这个token，如果请求中没有token或者token内容不正确，则认为可能是CSRF攻击而拒绝该请求。</p>
-<p>3 在HTTP头中自定义属性并验证</p>
-<p>自定义属性的方法也是使用token并进行验证，和前一种方法不同的是，这里并不是把token以参数的形式置于HTTP请求之中，而是把它放到HTTP头中自定义的属性里。通过XMLHttpRequest这个类，可以一次性给所有该类请求加上csrftoken这个HTTP头属性，并把token值放入其中。这样解决了前一种方法在请求中加入token的不便，同时，通过这个类请求的地址不会被记录到浏览器的地址栏，也不用担心token会通过Referer泄露到其他网站。</p>
-<p>4 用户端的防御<br> 对于普通用户来说，都学习并具备网络安全知识以防御网络攻击是不现实的。但若用户养成良好的上网习惯，则能够很大程度上减少CSRF攻击的危害。例如，用户上网时，不要轻易点击网络论坛、聊天室、即时通讯工具或电子邮件中出现的链接或者图片；及时退出长时间不使用的已登录账户，尤其是系统管理员，应尽量在登出系统的情况下点击未知链接和图片。除此之外，用户还需要在连接互联网的计算机上安装合适的安全防护软件，并及时更新软件厂商发布的特征库，以保持安全软件对最新攻击的实时跟踪。</p>
-<h2 id="漏洞利用演示"><a href="#漏洞利用演示" class="headerlink" title="漏洞利用演示"></a>漏洞利用演示</h2><p><strong>DVWA-CSRF</strong> </p>
-<h3 id="Low等级"><a href="#Low等级" class="headerlink" title="Low等级"></a>Low等级</h3><p><img src="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rj7imbaj309d04h3yg.jpg" alt></p>
-<p><strong>抓包</strong></p>
-<p> <img src="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rjjuze9j30jb08a0tk.jpg" alt></p>
-<p><strong>正常跳转</strong></p>
-<p><img src="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rjwbolhj30cr092t99.jpg" alt></p>
-<p> <img src="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rkaznc7j30m509xta1.jpg" alt></p>
-<p><strong>在这里我们把密码改为qwer</strong></p>
-<p><img src="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rl0tz7ij30k50bpwfm.jpg" alt></p>
-<p> <img src="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rlblovyj30h80ak3zr.jpg" alt></p>
-<p> <img src="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rlnu3npj30eh08haa5.jpg" alt></p>
-<p> <img src="/2019/07/30/csrf%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0/C:%5CUsers%5Cdell%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1563863977602.png" alt="1563863977602"></p>
-<p> <img src="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rmc4dwcj30lp09b74c.jpg" alt></p>
-<p><strong>成功进入了DVWA</strong></p>
-<p> <img src="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rmmq1hcj30my0czdiu.jpg" alt></p>
-<h3 id="CSRF-Medium等级"><a href="#CSRF-Medium等级" class="headerlink" title="CSRF Medium等级"></a>CSRF Medium等级</h3><p>开始，抓包</p>
-<p> <img src="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rn0qgarj30e2067t8y.jpg" alt></p>
-<p><img src="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rnbnvsjj31080bvack.jpg" alt></p>
-<p><strong>很显然，网站对referer做了验证，绕过referer验证有以下几种方法：</strong></p>
-<p><strong>1**</strong>）空Referer绕过：**</p>
-<p>在referer字段后添加：http:// https:// ftp:// file://,在发送，看是否可以绕过referer验证。</p>
-<p><strong>2**</strong>）判断referer是否存在某个关键词。**</p>
-<p><strong>在本示例中用第二种方法绕过referer验证：</strong></p>
-<p> <img src="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rnt5t3xj310b0a3jti.jpg" alt></p>
-<p><strong>构造csrf poc：</strong></p>
-<p> <img src="http://ww1.sinaimg.cn/large/007bHQE8gy1g59ro5r8guj30jt0b1dgy.jpg" alt></p>
-<p> <img src="http://ww1.sinaimg.cn/large/007bHQE8gy1g59royz8alj30hd08174o.jpg" alt></p>
-<p> <img src="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rp9mkq6j30kr08caaa.jpg" alt></p>
-<p> <img src="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rpmyq2nj30ga07raa8.jpg" alt></p>
-<h3 id="CSRF-High等级"><a href="#CSRF-High等级" class="headerlink" title="CSRF High等级"></a>CSRF High等级</h3><p> <img src="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rq3c9u8j30od08pgmj.jpg" alt></p>
-<p><strong>所以像medium和low等级那样的方法是不能用的了，但是我们可以利用burp的插件CSRF　Token　Tracker绕过token验证：</strong></p>
-<p><img src="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rqctd4cj30pc0fyadn.jpg" alt></p>
-<p> <img src="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rzieiw4j30uu04lt99.jpg" alt></p>
-<p><img src="http://ww1.sinaimg.cn/large/007bHQE8gy1g59rzujnl4j30wb0aw0u0.jpg" alt></p>
-<p><strong>然后来到repeater选项下：</strong></p>
-<p><img src="http://ww1.sinaimg.cn/large/007bHQE8gy1g59s05noxxj30yc096ju1.jpg" alt></p>
+        <h1 id="web中间件漏洞—NGINX漏洞"><a href="#web中间件漏洞—NGINX漏洞" class="headerlink" title="web中间件漏洞—NGINX漏洞"></a>web中间件漏洞—NGINX漏洞</h1><p><strong>什么是nginx？</strong></p>
+<blockquote>
+<ul>
+<li>Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，在BSD-like 协议下发行。</li>
+<li>其特点是占有内存少，并发能力强，nginx的并发能力在同类型的网页服务器中表现较好。主要应用在百度，淘宝等高并发请求情形。</li>
+</ul>
+</blockquote>
+<h2 id="解析漏洞"><a href="#解析漏洞" class="headerlink" title="解析漏洞"></a>解析漏洞</h2><h3 id="php配置错误导致的解析漏洞"><a href="#php配置错误导致的解析漏洞" class="headerlink" title="php配置错误导致的解析漏洞"></a>php配置错误导致的解析漏洞</h3><p><strong>漏洞简介:</strong></p>
+<p>对于任意文件名，在后面加上<strong>/任意文件名.php</strong>，之后，该文件即可以php格式解析。</p>
+<p>对于低版本的php能够直接解析成功，高版本php因为引入了<font color="red">security.limit_extensions</font>，限制了可执行文件的后缀为<strong>.php</strong>文件</p>
+<p><strong>原因:</strong></p>
+<p>php的配置不当，Nginx只要一看URL中路径名以.php结尾，便不管该文件是否存在，直接交给php处理。而如Apache等，会先看该文件是否存在，若存在则再决定该如何处理</p>
+<hr>
+<p><strong>cgi.fix_pathinfo</strong>:这个选项位于php.ini中，默认值为1(默认开启)。作用是当php遇到文件路径不存在时则会返回上一级目录判断，若存在则解析。例如说，<a href="http://test.com/shell.jpg/x.php中**x.php**为不存在文件，shell.jpg为上传的含有后门的jpg文件，此时服务器发现x.php不存在则回退一级将shell.jpg按照php格式解析" target="_blank" rel="noopener">http://test.com/shell.jpg/x.php中**x.php**为不存在文件，shell.jpg为上传的含有后门的jpg文件，此时服务器发现x.php不存在则回退一级将shell.jpg按照php格式解析</a></p>
+<p><strong>security.limit_extensions</strong>:它位于<font color="red"><code>/etc/php-fpm.d/www.conf</code></font>中这个选项开始是被注释了的也就是默认只允许执行<code>php</code>文件，将<code>;</code>去掉，可以在后面添加其它后缀，比如添加<code>.jpg</code>这样<code>.jpg</code>文件也能够以<code>php</code>来执行，修改了后需要<code>service php-fpm restart</code>重启<code>php</code></p>
+<hr>
+<h3 id="00截断解析漏洞"><a href="#00截断解析漏洞" class="headerlink" title="%00截断解析漏洞"></a>%00截断解析漏洞</h3><p><strong>漏洞版本:</strong></p>
+<ul>
+<li>nginx 0.5.</li>
+<li>nginx 0.6.*</li>
+<li>nginx 0.7 &lt;= 0.7.65</li>
+<li>nginx 0.8 &lt;= 0.8.37</li>
+</ul>
+<p><strong>漏洞简介:</strong></p>
+<p>Ngnix在遇到%00空字节时与后端FastCGI处理不一致，导致可以在图片中嵌入PHP代码然后通过访问xxx.jpg%00.php来执行其中的代码</p>
+<p>例如访问<a href="http://test.com/robots.txt%00.php时会将robots.txt当做php文件解析" target="_blank" rel="noopener">http://test.com/robots.txt%00.php时会将robots.txt当做php文件解析</a>          </p>
+<h3 id="CVE-2013-4547"><a href="#CVE-2013-4547" class="headerlink" title="CVE-2013-4547"></a>CVE-2013-4547</h3><p><strong>漏洞版本:</strong></p>
+<ul>
+<li>0.8.41～1.4.3</li>
+<li>1.5 &lt;= 1.5.7</li>
+</ul>
+<p><strong>漏洞简介</strong>:</p>
+<p>这一漏洞的原理是非法字符空格和截止符（\0）会导致Nginx解析URI时的有限状态机混乱，允许攻击者通过一个非编码空格绕过后缀名限制。</p>
+<p>例如:服务器中存在一个<strong>“test.aaa “</strong>的文件，注意后缀中有一个空格。此时若访问</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;test.com&#x2F;test.aaa \.bbb</span><br></pre></td></tr></table></figure>
+
+<p>让Nginx认为文件“test.aaa ”的后缀为“.bbb”</p>
+<p><strong>漏洞攻击方法:</strong></p>
+<p>在有文件上传的地方，上传时用BURP截包再文件末尾加上一句话木马</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> phpinfo(); <span class="meta">?&gt;</span> <span class="comment">//这里用phpinfo验证</span></span><br></pre></td></tr></table></figure>
+
+<p>如果上传的文件为shell.jpg，在网站中路径如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;test.com&#x2F;shell.jpg</span><br></pre></td></tr></table></figure>
+
+<p>那么你访问<a href="http://test.com/shell.jpgAAA.html，然后burp截包，将前两个A对应的asii的值改为20和00" target="_blank" rel="noopener">http://test.com/shell.jpgAAA.html，然后burp截包，将前两个A对应的asii的值改为20和00</a></p>
+<p><img src="/2020/09/29/%E4%BB%8E%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%88%B0getshell/1.png" alt></p>
+<p>此时返回的网页已经是被解析成PHP的了</p>
+<h1 id="web中间件漏洞—weblogic漏洞"><a href="#web中间件漏洞—weblogic漏洞" class="headerlink" title="web中间件漏洞—weblogic漏洞"></a>web中间件漏洞—weblogic漏洞</h1><p><strong>活跃版本:</strong></p>
+<p>Weblogic 10.3.6.0<br>Weblogic 12.1.3.0<br>Weblogic 12.2.1.1<br>Weblogic 12.2.1.2<br>Weblogic 12.2.1.3</p>
+<p>…………………………</p>
 
     </article>
     <!-- license  -->
@@ -523,17 +474,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2020/04/01/hello-world/" title= "重装系统后，迁移HEXO遇到的一些问题">
-                    <div class="nextTitle">重装系统后，迁移HEXO遇到的一些问题</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2019/07/27/centos/" title= "centos的配置包括一些基本服务的安装">
-                    <div class="prevTitle">centos的配置包括一些基本服务的安装</div>
+                <a href= "/2020/09/18/%E4%BB%8Esql%E6%B3%A8%E5%85%A5%E5%88%B0%E8%8E%B7%E5%8F%96shell/" title= "利用数据库从web服务器获取shell">
+                    <div class="prevTitle">利用数据库从web服务器获取shell</div>
                 </a>
             
         </li>
@@ -641,7 +587,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CSRF漏洞"><span class="toc-number">1.</span> <span class="toc-text">CSRF漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSRF漏洞简介"><span class="toc-number">1.1.</span> <span class="toc-text">CSRF漏洞简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSRF攻击原理及实例"><span class="toc-number">1.2.</span> <span class="toc-text">CSRF攻击原理及实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSRF攻击分类"><span class="toc-number">1.3.</span> <span class="toc-text">CSRF攻击分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSRF攻击实例"><span class="toc-number">1.4.</span> <span class="toc-text">CSRF攻击实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSRF漏洞防御"><span class="toc-number">1.5.</span> <span class="toc-text">CSRF漏洞防御</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#漏洞利用演示"><span class="toc-number">1.6.</span> <span class="toc-text">漏洞利用演示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Low等级"><span class="toc-number">1.6.1.</span> <span class="toc-text">Low等级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSRF-Medium等级"><span class="toc-number">1.6.2.</span> <span class="toc-text">CSRF Medium等级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSRF-High等级"><span class="toc-number">1.6.3.</span> <span class="toc-text">CSRF High等级</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#web中间件漏洞—NGINX漏洞"><span class="toc-number">1.</span> <span class="toc-text">web中间件漏洞—NGINX漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#解析漏洞"><span class="toc-number">1.1.</span> <span class="toc-text">解析漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#php配置错误导致的解析漏洞"><span class="toc-number">1.1.1.</span> <span class="toc-text">php配置错误导致的解析漏洞</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#00截断解析漏洞"><span class="toc-number">1.1.2.</span> <span class="toc-text">%00截断解析漏洞</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CVE-2013-4547"><span class="toc-number">1.1.3.</span> <span class="toc-text">CVE-2013-4547</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#web中间件漏洞—weblogic漏洞"><span class="toc-number">2.</span> <span class="toc-text">web中间件漏洞—weblogic漏洞</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
