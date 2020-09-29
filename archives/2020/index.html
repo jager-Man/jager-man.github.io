@@ -359,11 +359,9 @@
                 <span>利用数据库从web服务器获取shell</span>
         </a>
         <div class="abstract-content">
-            拿下DMZ服务器权限
-
-怎么拿？通常来说，dmz主机都是开放的网站服务器。
-
-sql注入获得webshellmysql端口:3306
+            
+sql注入获得webshell
+mysql端口:3306
 通过select into outfile实现
 1’ union select 1,’‘ INTO OUTFILE ‘/var/www/tmp/nb.php’#
 
@@ -371,7 +369,7 @@ select ……. into outfile 命令将数据库数据导出到 一个文本文件
 需要条件:    
 1.知道网站的绝对路径     
 2.可以读写指定的网站目录    
-3.指定的目录在mysql规定的...
+3.指定的目录在mysql规定的目录内(secure-file-priv这个参数不能为空也不能设置为指定的...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
