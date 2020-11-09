@@ -354,6 +354,41 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/11/09/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F-nps/" >
+            
+                <span>内网渗透-nps</span>
+        </a>
+        <div class="abstract-content">
+            NPS是什么?
+nps是一款轻量级、高性能、功能强大的内网穿透代理服务器。目前支持tcp、udp流量转发，可支持任何tcp、udp上层协议（访问内网网站、本地支付接口调试、ssh访问、远程桌面，内网dns解析等等……），此外还支持内网http代理、内网socks5代理、p2p等，并带有功能强大的web管理端。
+
+安装方式vps上安装
+123wget https:&#x2F;&#x2F;github.com&#x2F;ehang-io&#x2F;nps&#x2F;releases&#x2F;download&#x2F;v0.26.9&#x2F;linux_amd64_server.tar....
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/09</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "学习">学习</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "内网渗透">内网渗透</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/10/19/ssrf%E5%88%9D%E6%8E%A2/" >
             
                 <span>SSRF</span>
@@ -708,57 +743,11 @@ apache1.安装apache  yum install httpd httpd-devel
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/07/26/%E6%94%BB%E9%98%B2demo/" >
-            
-                <span>对某版本win7靶机的渗透测试</span>
-        </a>
-        <div class="abstract-content">
-            对某版本靶机进行小小的测试0x00首先使用工具去扫描，这里使用kali自带的zenmap和nmap去跑
-0x01
-在zenmap出跑出的端口列表中可以看得到，有3390端口没有被关闭。远程连接端口！
-直接链接ip看看能不能用
-可以连接，于是想到用九头蛇去爆破
-但是时间开销太大了，放弃，换个思路
-
-
-0x02
-nmap脚本跑出cve
-1nmap --script&#x3D;vuln ip
-
-
-查找到可以尝试利用，使用该模块
-
-展开设置，设置rhosts为目标主机，再run运行，得到VULENRABLE的结果，说明该漏洞可以利用 
-
-再次展开设置，设置rhost为目标主机开始攻击 
-
-选择载...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/26</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "漏洞利用">漏洞利用</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "攻防对抗">攻防对抗</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
+    
+    <nav class="page-nav">
+        <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">NEXT &gt;</a>
+    </nav>
     
 </main>
             <!-- profile -->
@@ -946,9 +935,22 @@ nmap脚本跑出cve
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 10
+        Total : 11
         </div>
         <!-- search  -->
         
@@ -965,6 +967,11 @@ nmap脚本跑出cve
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/09</span><a class="archive-post-title" href= "/2020/11/09/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F-nps/" >内网渗透-nps</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1065,6 +1072,8 @@ nmap脚本跑出cve
         <span class="sidebar-tag-name" data-tags="ssrf"><span class="iconfont-archer">&#xe606;</span>ssrf</span>
     
         <span class="sidebar-tag-name" data-tags="sql注入"><span class="iconfont-archer">&#xe606;</span>sql注入</span>
+    
+        <span class="sidebar-tag-name" data-tags="内网渗透"><span class="iconfont-archer">&#xe606;</span>内网渗透</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

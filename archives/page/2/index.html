@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta property="og:type" content="website">
 <meta property="og:title" content="Blog">
-<meta property="og:url" content="http://jager.top/archives/2020/10/index.html">
+<meta property="og:url" content="http://jager.top/archives/page/2/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="jager">
@@ -354,28 +354,44 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2020/10/19/ssrf%E5%88%9D%E6%8E%A2/" >
+        <a class="abstract-title" href = "/2019/07/26/%E6%94%BB%E9%98%B2demo/" >
             
-                <span>SSRF</span>
+                <span>对某版本win7靶机的渗透测试</span>
         </a>
         <div class="abstract-content">
-            SSRF是什么，怎么形成？SSRF(Server-Side Request Forgery:服务器端请求伪造) ，是由攻击者构造形成由服务端发起请求的一个安全漏洞。一般情况下，ssrf攻击的目标是从外网无法访问的内部系统。
-SSRF形成的原因大都是由于服务端提供了从其他服务器应用获取数据的功能且没有对目标地址做过滤与限制。比如从指定URL地址获取网页文本内容，加载指定地址的图片，下载等。
-按照我的理解来说,SSRF产生的原因很简单,服务器向外请求且回显到网站中(有回显)，此时如果没有做限制，攻击者可以控制请求的参数，向内网发起请求。
-验证方法1）因为SSRF漏洞是让服务器发送请求的安全漏...
+            对某版本靶机进行小小的测试0x00首先使用工具去扫描，这里使用kali自带的zenmap和nmap去跑
+0x01
+在zenmap出跑出的端口列表中可以看得到，有3390端口没有被关闭。远程连接端口！
+直接链接ip看看能不能用
+可以连接，于是想到用九头蛇去爆破
+但是时间开销太大了，放弃，换个思路
+
+
+0x02
+nmap脚本跑出cve
+1nmap --script&#x3D;vuln ip
+
+
+查找到可以尝试利用，使用该模块
+
+展开设置，设置rhosts为目标主机，再run运行，得到VULENRABLE的结果，说明该漏洞可以利用 
+
+再次展开设置，设置rhost为目标主机开始攻击 
+
+选择载...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/10/19</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/26</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "学习">学习</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "漏洞利用">漏洞利用</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "ssrf">ssrf</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "攻防对抗">攻防对抗</a>
     
 </div>
             
@@ -383,6 +399,10 @@ SSRF形成的原因大都是由于服务端提供了从其他服务器应用获�
     </article>
     
     <!-- paginator  -->
+    
+    <nav class="page-nav">
+        <a class="extend prev" rel="prev" href="/archives/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
+    </nav>
     
 </main>
             <!-- profile -->
