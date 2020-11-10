@@ -367,6 +367,47 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/11/10/serialize/" >
+            
+                <span>php序列化学习</span>
+        </a>
+        <div class="abstract-content">
+            什么是序列化?在php中，序列化用于存储和传递php的值的过程 ，且不丢失其结构和数据类型
+相关函数:
+
+serialize     unserialize    _sleep    _wakeup
+
+序列化函数:
+1string serialize ( mixed $value )
+
+小实例12345678910111213141516171819202122class test	&#123;	public $data;	private $pass;		punlic function _construct($data,$pass)&#123;		$this-&gt;data=$data...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/10</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "php">php</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "学习">学习</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "序列化">序列化</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/11/09/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F-nps/" >
             
                 <span>内网渗透-nps</span>
@@ -696,66 +737,6 @@ CSRF漏洞简介 CSRF（Cross-Site Request Forgery，跨站点伪造请求）是
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/07/27/centos/" >
-            
-                <span>centos的配置包括一些基本服务的安装</span>
-        </a>
-        <div class="abstract-content">
-            主要是对cenos7中出现的一些基础配置
-首先是对本地的网络进行配置
-
-对yum源的配置把yum源理解为安装工具就行了
-配置1.备份系统默认的yum源cd到该目录
-cd/etc/yum.repos.d/
-2.创建文件夹备份
-mkdir bak
-mv *.repo bak
-
-怎么配置
-
-挂载光盘(临时)
-
-2. 配置源文件
-
-
-name:随意命名
-baseurl:file(本地源,已经挂载到cdrom目录)
-http,https(网络源)
-gpgcheck:密钥检测
-
-
-
-apache1.安装apache  yum install httpd httpd-devel
-2.启动apache服...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/27</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "centos">centos</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "apache">apache</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "mysql">mysql</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "教程">教程</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
@@ -1035,9 +1016,22 @@ apache1.安装apache  yum install httpd httpd-devel
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 11
+        Total : 12
         </div>
         <!-- search  -->
         
@@ -1054,6 +1048,11 @@ apache1.安装apache  yum install httpd httpd-devel
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/10</span><a class="archive-post-title" href= "/2020/11/10/serialize/" >php序列化学习</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1161,6 +1160,8 @@ apache1.安装apache  yum install httpd httpd-devel
         <span class="sidebar-tag-name" data-tags="sql注入"><span class="iconfont-archer">&#xe606;</span>sql注入</span>
     
         <span class="sidebar-tag-name" data-tags="内网渗透"><span class="iconfont-archer">&#xe606;</span>内网渗透</span>
+    
+        <span class="sidebar-tag-name" data-tags="序列化"><span class="iconfont-archer">&#xe606;</span>序列化</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
