@@ -354,9 +354,55 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/11/14/ser-php/" >
+            
+                <span>PHP反序列化漏洞学习</span>
+        </a>
+        <div class="abstract-content">
+            序列化和反序列化这部分知识可以看上一篇文章，通俗的讲就是在传递数据的过程中将类和其他数据转换成字符串传递。然后在接收方通过反序列化还原
+产生反序列化漏洞的原因在php中存在很多魔术方法，序列化和反序列化中涉及到这些魔术方法的使用。
+
+
+__destruct
+__construct
+__toString
+__sleep
+__wakeup
+
+
+这些魔术方法在涉及类的构造，摧毁，序列化的重载等方面时会被自动调用，而如果没有对这些特殊方法进行控制，传递了关键的参数就会被攻击者控制。
+实例说的再多不如实际上手感受一下
+简单123456789101112&lt;?phperror_reporting...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/14</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "php">php</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "学习">学习</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "反序列化漏洞">反序列化漏洞</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/11/10/serialize/" >
             
-                <span>php序列化学习</span>
+                <span>序列化学习</span>
         </a>
         <div class="abstract-content">
             什么是序列化?在php中，序列化用于存储和传递php的值的过程 ，且不丢失其结构和数据类型
@@ -383,6 +429,8 @@ serialize     unserialize    _sleep    _wakeup
         <a class="post-tag" href="javascript:void(0);" data-tags = "学习">学习</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "序列化">序列化</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
     
 </div>
             
@@ -638,9 +686,22 @@ nps是一款轻量级、高性能、功能强大的内网穿透代理服务器�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 12
+        Total : 13
         </div>
         <!-- search  -->
         
@@ -660,7 +721,12 @@ nps是一款轻量级、高性能、功能强大的内网穿透代理服务器�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/10</span><a class="archive-post-title" href= "/2020/11/10/serialize/" >php序列化学习</a>
+            <span class="archive-post-date">11/14</span><a class="archive-post-title" href= "/2020/11/14/ser-php/" >PHP反序列化漏洞学习</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/10</span><a class="archive-post-title" href= "/2020/11/10/serialize/" >序列化学习</a>
         </li>
     
     
@@ -771,6 +837,10 @@ nps是一款轻量级、高性能、功能强大的内网穿透代理服务器�
         <span class="sidebar-tag-name" data-tags="内网渗透"><span class="iconfont-archer">&#xe606;</span>内网渗透</span>
     
         <span class="sidebar-tag-name" data-tags="序列化"><span class="iconfont-archer">&#xe606;</span>序列化</span>
+    
+        <span class="sidebar-tag-name" data-tags="反序列化漏洞"><span class="iconfont-archer">&#xe606;</span>反序列化漏洞</span>
+    
+        <span class="sidebar-tag-name" data-tags="java"><span class="iconfont-archer">&#xe606;</span>java</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
